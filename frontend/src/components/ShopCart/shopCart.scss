@@ -1,0 +1,101 @@
+@use '../../assets/sass/main.scss';
+
+.shop-cart {
+    position: relative;
+
+    svg {
+        display: inline;
+    }
+
+    .shop-cart-badge {
+        position: absolute;
+        background-color: tomato;
+        padding: 0 10px;
+        color: #fff;
+        border-radius: 50%;
+        top: 12px;
+    }
+    .shop-cart-summary {
+        position: absolute;
+        padding: 10px;
+        background-color: #eee;
+        right: 0;
+        z-index: 10;
+
+        .shop-cart-items{
+            max-height: 400px;
+
+            .shop-cart-item {
+                display: grid;
+                grid-template-columns: 60px 1fr auto;
+                align-items: center;
+                gap: 15px;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            
+                &:last-child {
+                    border-bottom: none;
+                }
+            
+                img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                }
+            
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+            
+                    .title {
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+            
+                    .count {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+            
+                        span {
+                            min-width: 20px;
+                            text-align: center;
+                        }
+            
+                        svg {
+                            cursor: pointer;
+                            font-size: 16px;
+                            transition: color 0.2s ease-in-out;
+            
+                            &:hover {
+                                color: tomato;
+                            }
+                        }
+                    }
+            
+                    .price {
+                        font-weight: bold;
+                        color: #333;
+                    }
+            
+                    .remove {
+                        cursor: pointer;
+                        font-size: 14px;
+                        color: #888;
+                        transition: color 0.2s ease-in-out;
+            
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+    }
+}
+
